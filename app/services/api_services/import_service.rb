@@ -28,12 +28,12 @@ module ApiServices
 
     def self.get_employees(access_token)
       employees_url = "#{BASE_URL}/employee/list"
-      headers = { Authorization: "Bearer #{access_token}"}
+      headers = { Authorization: "Bearer #{access_token}" }
 
       begin
         response = RestClient.get(employees_url, headers)
         JSON.parse(response.body)
-      rescue
+      rescue RestClient::ExceptionWithResponse => e
         raise APIRequestError, "API request failed. #{e.response.body}"
       end
     end
