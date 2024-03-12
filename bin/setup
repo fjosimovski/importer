@@ -32,4 +32,7 @@ FileUtils.chdir APP_ROOT do
 
   puts "\n== Restarting application server =="
   system! 'bin/rails restart'
+
+  puts "\n==  Running setup task to import data =="
+  system! 'bundle exec rake import:setup'
 end

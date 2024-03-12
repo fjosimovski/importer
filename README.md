@@ -1,24 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Prerequisites
 
-Things you may want to cover:
+The setups steps expect following tools installed on the system.
 
-* Ruby version
+- Ruby 3.2.1
+- Rails 7.0.8
+- Redis
+- Posgresql
+- Git
 
-* System dependencies
+##### 1. Navigate to the repository
 
-* Configuration
+```bash
+cd data-importer
+```
 
-* Database creation
+##### 2. Setup the application 
 
-* Database initialization
+The following command will setup the database:
 
-* How to run the test suite
+```bash
+bin/setup
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+##### 3. Start the API application
 
-* Deployment instructions
+This will start the crontab importer, start the redis server, sidekiq and rails server with URL http://localhost:3000
 
-* ...
+```bash
+bin/dev
+```
+
+##### 4. Testing  
+The code is covered with RSpec tests that can be executed with:
+```bash
+rspec spec/
+```
+
+##### 5. Start application   
+
+The imported employees will be shown on the http://localhost:3000 root path
