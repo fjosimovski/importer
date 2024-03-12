@@ -18,15 +18,15 @@ cd data-importer
 
 ##### 2. Setup the application 
 
-The following command will setup the database:
+The following command will setup the database and run rake for the first import:
 
 ```bash
 bin/setup
 ```
 
-##### 3. Start the API application
+##### 3. Start the application
 
-This will start the crontab importer, start the redis server, sidekiq and rails server with URL http://localhost:3000
+This will start the whenever crontab, start the redis server, sidekiq and rails server with URL http://localhost:3000
 
 ```bash
 bin/dev
