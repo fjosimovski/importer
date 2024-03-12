@@ -1,0 +1,35 @@
+<!-- app/views/employees/index.html.erb -->
+<h1>Employee List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Date of Birth</th>
+      <th>Email</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Address</th>
+      <th>Country</th>
+      <th>Bio</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.id %></td>
+        <td><%= employee.date_of_birth %></td>
+        <td><%= employee.email %></td>
+        <td><%= employee.first_name %></td>
+        <td><%= employee.last_name %></td>
+        <td><%= employee.address %></td>
+        <td><%= employee.country %></td>
+        <td><%= employee.bio %></td>
+        <td><%= employee.rating %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
